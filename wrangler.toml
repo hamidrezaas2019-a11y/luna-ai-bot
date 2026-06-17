@@ -1,8 +1,0 @@
-name = "luna-ai-bot"
-main = "index.ts"
-compatibility_date = "2025-01-01"
-compatibility_flags = ["nodejs_compat"]
-
-[[kv_namespaces]]
-binding = "SESSIONS"
-id = "da2ed64a60844dc48a8480eaf8d86e19"
