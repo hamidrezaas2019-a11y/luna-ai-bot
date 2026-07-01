@@ -1,7 +1,7 @@
 {
   "name": "novabaleh",
   "version": "1.0.1",
-  "description": "Nova AI Baleh Bot on Cloudflare Workers",
+  "description": "Nova AI Telegram Bot on Cloudflare Workers",
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
