@@ -4,6 +4,8 @@ compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
 [observability]
+enabled = true
+
 [observability.logs]
 enabled = true
 head_sampling_rate = 1
@@ -15,28 +17,13 @@ crons = ["*/5 * * * *"]
 
 [[kv_namespaces]]
 binding = "SESSIONS"
-id = "REAL_KV_NAMESPACE_ID"
+id = "33277d761c894912a0e554e2b8b2a9a4"
 
 [vars]
 MAINTENANCE_MODE = "false"
-TOKEN = "REAL_BOT_TOKEN"
-WEBHOOK_SECRET = ""
 WEBHOOK_URL = "REAL_WEBHOOK_URL"
-PROXY_AUTH_KEY = ""
-
-ELEVENLABS_KEY_1 = "..."
-GEMINI_KEY_1 = "..."
-GOOGLE_SEARCH_API_KEY = "..."
-GOOGLE_SEARCH_ENGINE_ID = "..."
-PIXABAY_KEY = "..."
-CF_ID_1 = "..."
-CF_TOKEN_1 = "..."
-POE_KEY_1 = "..."
-POLLINATIONS_KEY_1 = "..."
-SAMBANOVA_KEY_1 = "..."
 
 [env.production.vars]
 ENVIRONMENT = "production"
 MAINTENANCE_MODE = "false"
-TOKEN = "REAL_BOT_TOKEN"
 WEBHOOK_URL = "REAL_WEBHOOK_URL"
