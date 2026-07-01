@@ -1,7 +1,6 @@
 name = "luna-ai-bot"
-main = "index.ts"  # ← اینجا را تغییر دهید
+main = "src/index.ts"
 compatibility_date = "2024-12-18"
-# ... باقی تنظیمات
 
 [observability.logs]
 enabled = true
