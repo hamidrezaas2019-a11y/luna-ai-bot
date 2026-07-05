@@ -1,3 +1,4 @@
+
 name = "luna-ai-bot"
 main = "index.ts"
 compatibility_date = "2024-12-18"
@@ -6,7 +7,6 @@ compatibility_date = "2024-12-18"
 enabled = true
 head_sampling_rate = 1
 invocation_logs = true
-persist = true
 
 [triggers]
 crons = ["*/5 * * * *"]
