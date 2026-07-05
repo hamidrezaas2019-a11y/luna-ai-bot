@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cloudflare/wrangler-action@v3
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: "تcfut_1ZV8oZ7vXiA0b2rgp6581G2q8pt6Rl189j7sVTYk136a23ca"
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
