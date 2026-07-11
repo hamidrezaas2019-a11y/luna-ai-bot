@@ -19,10 +19,10 @@ id = "33277d761c894912a0e554e2b8b2a9a4"
 [vars]
 ADMIN_ID = "5989309344"
 MAINTENANCE_MODE = "false"
-WEBHOOK_URL = "https://luna-ai-bot.<YOUR_SUBDOMAIN>.workers.dev/webhook"
+WEBHOOK_URL = "https://آدرس-واقعی-worker.workers.dev/webhook"
 
 [env.production.vars]
 ENVIRONMENT = "production"
 ADMIN_ID = "5989309344"
 MAINTENANCE_MODE = "false"
-WEBHOOK_URL = "https://luna-ai-bot.<YOUR_SUBDOMAIN>.workers.dev/webhook"
+WEBHOOK_URL = "https://آدرس-واقعی-worker.workers.dev/webhook"
