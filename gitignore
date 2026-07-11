@@ -12,6 +12,11 @@ yarn-error.log*
 *.key
 *.crt
 
+# Telegram Sessions
+*.session
+accounts.json
+storage/
+
 # Build & Cache
 .DS_Store
 Thumbs.db
@@ -21,6 +26,7 @@ Thumbs.db
 .cache/
 dist/
 build/
+coverage/
 *.tsbuildinfo
 
 # Editors
