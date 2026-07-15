@@ -24,7 +24,6 @@ Thumbs.db
 *.tmp
 *.temp
 .cache/
-dist/
 build/
 coverage/
 *.tsbuildinfo
