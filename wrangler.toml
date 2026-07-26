@@ -15,6 +15,11 @@ crons = ["*/5 * * * *"]
 binding = "SESSIONS"
 id = "33277d761c894912a0e554e2b8b2a9a4"
 
+[[d1_databases]]
+binding = "DB"
+database_name = "nova-db"
+database_id = "00000000-00000006-000050b4-045b62bec2f79f161d193cfaf8f6fbe5"
+
 [vars]
 ADMIN_ID = "5989309344"
 MAINTENANCE_MODE = "false"
