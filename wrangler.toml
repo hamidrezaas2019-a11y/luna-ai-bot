@@ -1,4 +1,4 @@
-name = "luna-ai-bot"
+name = "nova-bot"
 main = "index.ts"
 compatibility_date = "2024-12-18"
 workers_dev = true
