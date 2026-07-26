@@ -1,5 +1,5 @@
 name = "luna-ai-bot"
-main = "index.ts"  # ← این رو عوض کن
+main = "nova.ts"
 compatibility_date = "2024-12-18"
 workers_dev = true
 
@@ -8,26 +8,14 @@ enabled = true
 head_sampling_rate = 1
 invocation_logs = true
 
-[triggers]
-crons = ["*/5 * * * *"]
+# [triggers]  ← این بخش را کامنت کنید
+# crons = ["*/5 * * * *"]
 
 [[kv_namespaces]]
 binding = "SESSIONS"
 id = "33277d761c894912a0e554e2b8b2a9a4"
 
-# اگه D1 نمیخوای، این رو کامنت کن
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "nova-db"
-# database_id = "00000000-00000006-000050b4-045b62bec2f79f161d193cfaf8f6fbe5"
-
 [vars]
-ADMIN_ID = "5989309344"
-MAINTENANCE_MODE = "false"
-WEBHOOK_URL = "https://luna-ai-bot.hamidreza-as2019.workers.dev/webhook"
-
-[env.production.vars]
-ENVIRONMENT = "production"
 ADMIN_ID = "5989309344"
 MAINTENANCE_MODE = "false"
 WEBHOOK_URL = "https://luna-ai-bot.hamidreza-as2019.workers.dev/webhook"
