@@ -12,9 +12,15 @@
     ],
     "strict": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
   "include": [
-    "index.ts"
+    "src/**/*.ts"  // ← ✅ تمام فایل‌های TypeScript در پوشه src
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
