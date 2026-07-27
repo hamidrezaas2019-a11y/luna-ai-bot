@@ -2,14 +2,9 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "lib": [
-      "ES2022",
-      "WebWorker"
-    ],
+    "lib": ["ES2022", "WebWorker"],
     "moduleResolution": "Bundler",
-    "types": [
-      "@cloudflare/workers-types"
-    ],
+    "types": ["@cloudflare/workers-types"],
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
@@ -17,7 +12,7 @@
     "rootDir": "./src"
   },
   "include": [
-    "src/**/*.ts"  // ← ✅ تمام فایل‌های TypeScript در پوشه src
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
