@@ -1832,4 +1832,4 @@ async function handleVoice(message, env) {
     console.error('Voice Processing Error:', error);
     await sendMessage(chatId, '⚠️ خطا در پردازش ویس.', null, 'HTML', env);
   }
-                          }
+      }
