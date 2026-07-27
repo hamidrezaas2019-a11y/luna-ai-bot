@@ -1,22 +1,165 @@
-# wrangler.toml
+# ============================================================
+# 📦 Cloudflare Wrangler Configuration - Nova Bot v2.0.0
+# ============================================================
+
 name = "nova-bot"
-main = "src/index.ts"                    # ✅ اصلاح شد
+main = "index.ts"
 compatibility_date = "2024-12-18"
 workers_dev = true
+
+# ============================================================
+# 📊 Observability & Logging
+# ============================================================
 
 [observability.logs]
 enabled = true
 head_sampling_rate = 1
 invocation_logs = true
 
-# [triggers]  ← این بخش را کامنت کنید
-# crons = ["*/5 * * * *"]
+# ============================================================
+# ⏰ Scheduled Jobs (Cron Triggers)
+# ============================================================
+
+# [triggers]
+# crons = ["*/5 * * * *"]  # هر 5 دقیقه یکبار (در صورت نیاز)
+
+# ============================================================
+# 💾 KV Namespace (برای ذخیره جلسات)
+# ============================================================
 
 [[kv_namespaces]]
 binding = "SESSIONS"
 id = "33277d761c894912a0e554e2b8b2a9a4"
 
+# ============================================================
+# 🔧 Environment Variables (غیرحساس)
+# ============================================================
+
 [vars]
-BOT_OWNER_ID = "5989309344"              # ✅ اصلاح شد
+BOT_OWNER_ID = "5989309344"
 MAINTENANCE_MODE = "false"
-WEBHOOK_URL = "https://luna-ai-bot.hamidreza-as2019.workers.dev/webhook"
+WEBHOOK_URL = "https://nova-bot.hamidreza-as2019.workers.dev/webhook"
+
+# ============================================================
+# 🔐 Secrets (حساس - با wrangler secret تنظیم کنید)
+# ============================================================
+
+# ✅ توکن ربات (اجباری)
+# wrangler secret put TOKEN
+
+# ✅ کلیدهای Gemini (اختیاری - 5 عدد)
+# wrangler secret put GEMINI_KEY_1
+# wrangler secret put GEMINI_KEY_2
+# wrangler secret put GEMINI_KEY_3
+# wrangler secret put GEMINI_KEY_4
+# wrangler secret put GEMINI_KEY_5
+
+# ✅ کلیدهای SambaNova (اختیاری - 5 عدد)
+# wrangler secret put SAMBANOVA_KEY_1
+# wrangler secret put SAMBANOVA_KEY_2
+# wrangler secret put SAMBANOVA_KEY_3
+# wrangler secret put SAMBANOVA_KEY_4
+# wrangler secret put SAMBANOVA_KEY_5
+
+# ✅ کلیدهای Pollinations (اختیاری)
+# wrangler secret put POLLINATIONS_KEY_1
+# wrangler secret put POLLINATIONS_KEY_2
+# wrangler secret put POLLINATIONS_KEY_3
+# wrangler secret put POLLINATIONS_KEY_4
+# wrangler secret put POLLINATIONS_KEY_5
+
+# ✅ کلید Pixabay (برای جستجوی تصویر - اختیاری)
+# wrangler secret put PIXABAY_KEY
+
+# ✅ کلیدهای Cloudflare (برای AI تصویر - اختیاری)
+# wrangler secret put CF_TOKEN_1
+# wrangler secret put CF_TOKEN_2
+# wrangler secret put CF_TOKEN_3
+# wrangler secret put CF_ID_1
+# wrangler secret put CF_ID_2
+# wrangler secret put CF_ID_3
+
+# ============================================================
+# 🚀 Deploy Settings (اختیاری)
+# ============================================================
+
+# [env.production]
+# vars = { BOT_OWNER_ID = "5989309344" }
+
+# [env.staging]
+# vars = { BOT_OWNER_ID = "5989309344" }
+
+# ============================================================
+# 📦 Build Settings (اختیاری)
+# ============================================================
+
+# [build]
+# command = "npm run build"
+# watch_dir = "src"
+
+# ============================================================
+# 🌐 Routes (اختیاری - برای دامنه شخصی)
+# ============================================================
+
+# [[routes]]
+# pattern = "nova-bot.hamidreza-as2019.workers.dev"
+# zone_id = "your-zone-id"
+
+# ============================================================
+# 🧪 Durable Objects (اختیاری - برای stateful)
+# ============================================================
+
+# [[durable_objects.bindings]]
+# name = "COUNTER"
+# class_name = "Counter"
+
+# [[migrations]]
+# tag = "v1"
+# new_classes = ["Counter"]
+
+# ============================================================
+# 📁 R2 Bucket (اختیاری - برای ذخیره فایل)
+# ============================================================
+
+# [[r2_buckets]]
+# binding = "FILES"
+# bucket_name = "nova-bot-files"
+
+# ============================================================
+# 🗄️ D1 Database (اختیاری - برای دیتابیس SQL)
+# ============================================================
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "nova-bot-db"
+# database_id = "your-d1-database-id"
+
+# ============================================================
+# 🔗 Service Bindings (اختیاری - برای ارتباط با سرویس‌های دیگر)
+# ============================================================
+
+# [[services]]
+# binding = "OTHER_SERVICE"
+# service = "other-worker"
+# environment = "production"
+
+# ============================================================
+# 🎯 Queue (اختیاری - برای صف پیام)
+# ============================================================
+
+# [[queues.producers]]
+# binding = "QUEUE"
+# queue = "nova-bot-queue"
+
+# [[queues.consumers]]
+# queue = "nova-bot-queue"
+# max_batch_size = 10
+# max_batch_timeout = 5
+
+# ============================================================
+# 📡 Analytics Engine (اختیاری - برای آنالیز)
+# ============================================================
+
+# [[analytics_engine_datasets]]
+# binding = "ANALYTICS"
+# dataset = "nova_bot_analytics"
