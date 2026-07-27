@@ -11,18 +11,12 @@ yarn-error.log*
 *.pem
 *.key
 *.crt
+wrangler.toml
 
-# Telegram Sessions
-*.session
-accounts.json
-storage/
-
-# Build & Cache
+# Build
 .DS_Store
 Thumbs.db
 *.log
-*.tmp
-*.temp
 .cache/
 build/
 coverage/
@@ -40,8 +34,3 @@ wrangler.toml.local
 *.local.toml
 .dev.vars
 .vercel/
-
-# Bundles
-*.min.js
-*.bundle.js
-*.bundle.js.map
