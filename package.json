@@ -1,17 +1,18 @@
 {
-  "name": "novabaleh",
-  "version": "1.0.1",
-  "description": "Nova AI Telegram Bot on Cloudflare Workers",
-  "type": "module",
+  "name": "nova-bot",
+  "version": "2.0.0",
+  "description": "Nova Bot - Advanced Telegram Bot",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "tail": "wrangler tail",
-    "type-check": "tsc --noEmit"
+    "build": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^5.0.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241205.0",
-    "typescript": "^5.7.2",
-    "wrangler": "^4.26.0"
+    "@cloudflare/workers-types": "^4.0.0",
+    "wrangler": "^3.0.0"
   }
 }
