@@ -3,10 +3,11 @@
 // WORKER: nova-bot.hamidreza-as2019.workers.dev
 
 export default {
+  // ========== FETCH HANDLER ==========
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // ========== SET WEBHOOK (NO SECRET NEEDED) ==========
+    // ========== SET WEBHOOK ==========
     if (url.pathname === '/setwebhook') {
       const webhookUrl = `https://nova-bot.hamidreza-as2019.workers.dev/webhook`;
       const result = await fetch(`https://api.telegram.org/botHA0933as/setWebhook?url=${webhookUrl}`);
@@ -41,6 +42,28 @@ export default {
       status: 200,
       headers: { 'Content-Type': 'text/plain; charset=utf-8' }
     });
+  },
+
+  // ========== SCHEDULED HANDLER (برای کرون جاب) ==========
+  async scheduled(event, env, ctx) {
+    // این تابع هر ۵ دقیقه اجرا میشه
+    console.log('🔄 کرون جاب اجرا شد:', new Date().toISOString());
+    
+    try {
+      // چک کردن وضعیت Webhook
+      const res = await fetch(`https://api.telegram.org/botHA0933as/getWebhookInfo`);
+      const data = await res.json();
+      
+      // اگه Webhook تنظیم نبود، دوباره تنظیم کن
+      if (!data.result || data.result.url !== 'https://nova-bot.hamidreza-as2019.workers.dev/webhook') {
+        await fetch(`https://api.telegram.org/botHA0933as/setWebhook?url=https://nova-bot.hamidreza-as2019.workers.dev/webhook`);
+        console.log('✅ Webhook دوباره تنظیم شد');
+      }
+      
+      console.log('📊 Webhook status:', data.result?.url || 'NOT SET');
+    } catch (e) {
+      console.error('Scheduled error:', e);
+    }
   }
 };
 
@@ -241,7 +264,7 @@ function getPersonaSetText(persona) {
   return `✅ شخصیت شما به ${p.emoji} ${persona} تغییر کرد!`;
 }
 
-// ==================== HANDLERS ====================
+// ==================== UPDATE HANDLER ====================
 
 async function handleUpdate(update) {
   const { message, callback_query } = update;
@@ -255,6 +278,8 @@ async function handleUpdate(update) {
     await handleMessage(message);
   }
 }
+
+// ==================== CALLBACK HANDLER ====================
 
 async function handleCallback(callback) {
   const chatId = callback.message.chat.id;
@@ -313,6 +338,8 @@ async function handleCallback(callback) {
   }
 }
 
+// ==================== MESSAGE HANDLER ====================
+
 async function handleMessage(message) {
   const chatId = message.chat.id;
   const text = message.text || '';
@@ -354,8 +381,9 @@ async function handleMessage(message) {
     return;
   }
   
-  // AI Response with personality
-  await sendMessage(chatId, `🤖 **پاسخ هوش مصنوعی:**\n\n${text}\n\n(در نسخه کامل به OpenAI متصل میشه)`);
+  // پاسخ معمولی با شخصیت
+  const persona = PERSONA_INFO.nova;
+  await sendMessage(chatId, `${persona.emoji} **${persona.name}:**\n\n${text}\n\n(در نسخه کامل به هوش مصنوعی متصل میشه)`);
 }
 
 // ==================== ۱۰ شخصیت کامل ====================
@@ -1804,4 +1832,4 @@ async function handleVoice(message, env) {
     console.error('Voice Processing Error:', error);
     await sendMessage(chatId, '⚠️ خطا در پردازش ویس.', null, 'HTML', env);
   }
-  }
+                          }
