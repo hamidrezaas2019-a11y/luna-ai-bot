@@ -21,7 +21,7 @@ invocation_logs = true
 # ============================================================
 
 [[kv_namespaces]]
-binding = "KV_NAMESPACE"
+binding = "SESSIONS"  # ✅ اصلاح شد
 id = "da2ed64a60844dc48a8480eaf8d86e19"
 
 # ============================================================
@@ -29,7 +29,6 @@ id = "da2ed64a60844dc48a8480eaf8d86e19"
 # ============================================================
 
 [vars]
-BOT_TOKEN = "8582234355:AAHKbwiwPoB8MkR-56SBlJlJAeoUq6vbNJk"
+TOKEN = "8582234355:AAHKbwiwPoB8MkR-56SBlJlJAeoUq6vbNJk"
 BOT_OWNER_ID = "5989309344"
 MAINTENANCE_MODE = "false"
-WEBHOOK_URL = "https://nova-bot.hamidreza-as2019.workers.dev/webhook"
