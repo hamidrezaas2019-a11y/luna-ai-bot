@@ -2,7 +2,7 @@
   "name": "nova-bot",
   "version": "2.0.0",
   "description": "Nova AI Telegram Bot - Full Admin Panel with Voice TTS",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
