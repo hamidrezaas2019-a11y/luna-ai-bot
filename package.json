@@ -1,0 +1,21 @@
+{
+  "name": "nova-bot",
+  "version": "2.0.0",
+  "description": "Nova AI Telegram Bot - Full Admin Panel with Voice TTS",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc",
+    "start": "wrangler dev --local"
+  },
+  "keywords": ["telegram", "bot", "ai", "cloudflare", "worker"],
+  "author": "@Hamid_Ai_pro",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
+  }
+}
