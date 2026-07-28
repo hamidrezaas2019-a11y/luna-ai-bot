@@ -1,0 +1,50 @@
+# ============================================================
+# 🚀 NOVA BOT - Cloudflare Worker Configuration
+# ============================================================
+
+name = "nova-bot"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# ============================================================
+# 📦 KV Namespaces
+# ============================================================
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "YOUR_KV_NAMESPACE_ID"  # <-- این رو عوض کن
+
+# ============================================================
+# 🔑 Environment Variables
+# ============================================================
+
+[vars]
+# Bot Settings
+BOT_OWNER_ID = "5989309344"  # <-- آیدی تلگرام خودت
+
+# Gemini API Keys
+GEMINI_KEY_1 = "your_gemini_key_1"
+GEMINI_KEY_2 = "your_gemini_key_2"
+GEMINI_KEY_3 = "your_gemini_key_3"
+GEMINI_KEY_4 = "your_gemini_key_4"
+GEMINI_KEY_5 = "your_gemini_key_5"
+
+# SambaNova API Keys
+SAMBANOVA_KEY_1 = "your_sambanova_key_1"
+SAMBANOVA_KEY_2 = "your_sambanova_key_2"
+SAMBANOVA_KEY_3 = "your_sambanova_key_3"
+SAMBANOVA_KEY_4 = "your_sambanova_key_4"
+SAMBANOVA_KEY_5 = "your_sambanova_key_5"
+
+# Pollinations API Key
+POLLINATIONS_KEY_1 = "your_pollinations_key"
+
+# Cloudflare AI
+CF_ID_1 = "your_cloudflare_account_id"
+CF_TOKEN_1 = "your_cloudflare_api_token"
+
+# Pixabay API Key
+PIXABAY_KEY = "your_pixabay_key"
+
+# Maintenance Mode
+MAINTENANCE_MODE = "false"
